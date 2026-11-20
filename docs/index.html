@@ -277,7 +277,8 @@
   const netdisk = document.getElementById("netdiskBtn");
   netdisk.href = target;
   netdisk.textContent = NETDISK_URL ? "网盘下载（推荐）" : "GitHub 下载";
-  document.getElementById("mainDownload").href = target;
+  // 首屏按钮先滚到下载区（那里能看到提取码），避免用户直接跳到网盘密码页
+  document.getElementById("mainDownload").href = "#download";
 
   // 提取码展示与一键复制
   if (NETDISK_URL && NETDISK_CODE) {
