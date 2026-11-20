@@ -1,0 +1,13 @@
+{
+  "name": "ClipLink · 局域网剪切板与文件共享",
+  "short_name": "ClipLink",
+  "description": "局域网内跨设备同步剪切板与共享文件",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ee",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
