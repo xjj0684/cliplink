@@ -109,6 +109,11 @@
 
   .download{text-align:center;padding:76px 0}
   .download .btn{font-size:17px;padding:17px 34px}
+  .code-line{margin-top:16px;font:500 13px/1.6 var(--mono);color:var(--muted)}
+  .code-line b{color:var(--accent);letter-spacing:.12em}
+  .code-line button{margin-left:8px;font:500 12px/1 var(--mono);color:var(--dim);cursor:pointer;
+    background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:7px;padding:6px 10px}
+  .code-line button:hover{color:var(--ink);border-color:rgba(45,226,192,.4)}
   .note{margin-top:18px;font:500 12px/1.7 var(--mono);color:var(--faint)}
 
   footer{padding:34px 0 54px;border-top:1px solid var(--line-soft);
@@ -219,6 +224,10 @@
       <a class="btn btn-primary" id="netdiskBtn" href="#" rel="noopener">网盘下载（推荐）</a>
       <a class="btn btn-ghost" href="https://github.com/xjj0684/cliplink/releases/latest" target="_blank" rel="noopener">GitHub 下载</a>
     </div>
+    <p class="code-line" id="codeLine" hidden>
+      网盘提取码 <b id="codeVal"></b>
+      <button type="button" id="copyCode">复制</button>
+    </p>
     <p class="note">网盘链接失效请在评论区反馈 · 当前版本 v1.3.0 · 更新于 2026-11-20</p>
   </section>
 
@@ -261,13 +270,31 @@
 
 <script>
   // 网盘分享链接：上传后把地址填到这里即可，留空时按钮回退到 GitHub
-  const NETDISK_URL = "";
+  const NETDISK_URL = "https://wwbsb.lanzouw.com/iyRsp4gnseef";
+  const NETDISK_CODE = "1234";
   const GITHUB_RELEASE = "https://github.com/xjj0684/cliplink/releases/latest";
   const target = NETDISK_URL || GITHUB_RELEASE;
   const netdisk = document.getElementById("netdiskBtn");
   netdisk.href = target;
   netdisk.textContent = NETDISK_URL ? "网盘下载（推荐）" : "GitHub 下载";
   document.getElementById("mainDownload").href = target;
+
+  // 提取码展示与一键复制
+  if (NETDISK_URL && NETDISK_CODE) {
+    const line = document.getElementById("codeLine");
+    const val = document.getElementById("codeVal");
+    val.textContent = NETDISK_CODE;
+    line.hidden = false;
+    document.getElementById("copyCode").addEventListener("click", async (e) => {
+      try {
+        await navigator.clipboard.writeText(NETDISK_CODE);
+        e.target.textContent = "已复制";
+        setTimeout(() => (e.target.textContent = "复制"), 1600);
+      } catch {
+        e.target.textContent = NETDISK_CODE;
+      }
+    });
+  }
 </script>
 </body>
 </html>
