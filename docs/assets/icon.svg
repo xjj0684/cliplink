@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ClipLink">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#149381"/>
+      <stop offset="0.55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0a5a54"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfaf3"/>
+      <stop offset="1" stop-color="#f2ebda"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="158" y="160" width="224" height="254" rx="40" fill="#f2ebda" opacity="0.38"/>
+  <rect x="130" y="134" width="252" height="278" rx="46" fill="url(#paper)"/>
+  <rect x="212" y="104" width="88" height="58" rx="26" fill="url(#paper)"/>
+  <rect x="230" y="120" width="52" height="22" rx="11" fill="#0f766e"/>
+  <rect x="174" y="222" width="138" height="20" rx="10" fill="#0f766e"/>
+  <rect x="174" y="266" width="102" height="20" rx="10" fill="#0f766e" opacity="0.45"/>
+  <circle cx="330" cy="336" r="46" fill="#e2a94f"/>
+  <path d="M311 336l13 13 22-24" fill="none" stroke="#3c2c11" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
